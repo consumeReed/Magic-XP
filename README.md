@@ -11,5 +11,3 @@ Upon both entries, the amount of spell casts needed will be calculated.
 
 * Java
 * OSRS API
-
-## Jagex
