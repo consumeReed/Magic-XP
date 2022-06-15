@@ -1,4 +1,8 @@
-
+/**
+ * 
+ * @author rmitc
+ * Runes that fire spells use
+ */
 public class runes {
 	
 	int airRunes;
