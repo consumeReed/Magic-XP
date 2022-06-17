@@ -12,12 +12,12 @@ public class XPcalc {
 	{
 		BufferedReader br = null;
 		try {
-			File f = new File("lib\\xp.txt");
+			File f = new File("bin\\xps.txt");
 			br = new BufferedReader(new FileReader(f));
 			String line = null;
 			while((line = br.readLine()) != null)
 			{
-				String[] parts = line.split(":");
+				String[] parts = line.split(" ");
 				
 				String lvl = parts[0].trim();
 				String xp = parts[1].trim();
