@@ -9,7 +9,6 @@ public class calc {
 	
 	static String curLvl;
 	static String desLvl;
-	static String name;
 	
 	static String curXP;
 	static String desXP;
@@ -22,15 +21,6 @@ public class calc {
 		int lv = 0;
 		XPcalc x = new XPcalc();
 		Scanner sc = new Scanner(System.in);
-        //System.out.println("Enter your level");
-        //curLvl = sc.nextLine();
-        //curXP = x.getXP(curLvl);
-		System.out.println("Enter your name");
-		name = sc.nextLine();
-		player p = new player(name);
-		curLvl = p.magicLvl;
-		curXP = p.magicXp;
-		
         System.out.println("Enter your level");
         curLvl = sc.nextLine();
         curXP = x.getXP(curLvl);
