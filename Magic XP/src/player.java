@@ -18,13 +18,19 @@ public class player {
 	{
 		try {
 			DownloadPage(url+name.replaceAll(" ", "%20"));
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			System.err.println("Invalid name");
 		}
-		String tmp = list.get(7);
-		String[] tmpArr = tmp.split(",");
-		magicLvl = tmpArr[1];
-		magicXp = tmpArr[2];
+		try {
+			String tmp = list.get(7);
+			String[] tmpArr = tmp.split(",");
+			magicLvl = tmpArr[1];
+			magicXp = tmpArr[2];
+		}
+		catch(Exception e)
+		{
+			System.err.println("Invalid name");
+		}
 	}
 	
 	/**
