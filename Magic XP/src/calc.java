@@ -16,28 +16,30 @@ public class calc {
 	
 	static double cXP;
 	static double dXP;
+	static boolean run;
 	
 	public static void main(String[] args)
 	{
 		int lv = 0;
 		XPcalc x = new XPcalc();
 		Scanner sc = new Scanner(System.in);
-        //System.out.println("Enter your level");
-        //curLvl = sc.nextLine();
-        //curXP = x.getXP(curLvl);
+		run = true;
 		System.out.println("Enter your name");
 		name = sc.nextLine();
 		player p = new player(name);
 		curLvl = p.magicLvl;
 		curXP = p.magicXp;
+		
+		while(run) {
+		run = false;
         System.out.println("Enter your desired level");
         desLvl = sc.nextLine();
         desXP = x.getXP(desLvl);
-        System.out.println("\n");
         
         cXP = Double.parseDouble(curXP);
         dXP = Double.parseDouble(desXP);
         
+        if(cXP<dXP) {
         System.out.printf("\nCurrent xp: %.0f\n",cXP);
         System.out.printf("\nDesired xp: %.0f\n",dXP);
         
@@ -65,7 +67,32 @@ public class calc {
     	}
         
 	}
+        else
+        {
+        	System.out.println("You are already at or above this level");
+        }
+        boolean ans = false;
+        while(!ans) {
+        System.out.println("\nIf you would to recalculate enter (R) or quit enter (Q)");
+        String inp = sc.nextLine();
+        if("q".equals(inp.toLowerCase()))
+        {
+        	return;
+        }
+        if("r".equals(inp.toLowerCase()))
+        {
+        	run = true;
+        	break;
+        }
+        else
+        {
+        	System.out.println("Command incorrect, try again");
+		}
+        }
+	}
 	
 	
 	
+	
+}
 }
