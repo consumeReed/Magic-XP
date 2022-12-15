@@ -13,24 +13,27 @@ public class player {
 	static String magicLvl;
 	static String magicXp;
 	static final String url = "https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=";
+	static boolean valid;
 	
 	public player(String name)
 	{
+		valid = false;
 		try {
 			DownloadPage(url+name.replaceAll(" ", "%20"));
-		} catch (Exception e) {
-			System.err.println("Invalid name");
-		}
-		try {
 			String tmp = list.get(7);
 			String[] tmpArr = tmp.split(",");
 			magicLvl = tmpArr[1];
 			magicXp = tmpArr[2];
-		}
-		catch(Exception e)
-		{
+			valid = true;
+		} catch (Exception e) {
 			System.err.println("Invalid name");
 		}
+
+	}
+	
+	public boolean getValidity()
+	{
+		return valid;
 	}
 	
 	/**

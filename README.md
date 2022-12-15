@@ -11,6 +11,8 @@ Application to calculate spell casts needed to achieve a given level in Old Scho
 * Java
 * OSRS API
 
+##
+Requires Java 1.8 or higher to run
 
 ## Getting Started
 * Download and unzip the latest release

@@ -24,11 +24,19 @@ public class calc {
 		XPcalc x = new XPcalc();
 		Scanner sc = new Scanner(System.in);
 		run = true;
-		System.out.println("Enter your name");
-		name = sc.nextLine();
-		player p = new player(name);
-		curLvl = p.magicLvl;
-		curXP = p.magicXp;
+		
+		
+		boolean goodName = false;
+		player p;
+		while(!goodName) {
+			System.out.println("Enter your name");
+			name = sc.nextLine();
+			p = new player(name);
+			goodName = p.getValidity();
+			curLvl = p.magicLvl;
+			curXP = p.magicXp;
+		}
+		
 		
 		while(run) {
 		run = false;
